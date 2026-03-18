@@ -10,7 +10,8 @@ config_version=5
 
 [application]
 
-config/name="Do Fish Go To Heaven"
+config/name="Fishing In The Styx"
+run/main_scene="uid://03rrsj20k2i0"
 config/features=PackedStringArray("4.6", "Forward Plus")
 
 [filesystem]
