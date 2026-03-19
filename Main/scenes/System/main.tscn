@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://03rrsj20k2i0"]
+
+[ext_resource type="PackedScene" uid="uid://cpv61c50e5wq7" path="res://Main/player.tscn" id="1_yh5la"]
+
+[sub_resource type="GDScript" id="GDScript_yh5la"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7dm0k"]
+size = Vector3(60, 2, 60)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ig7tw"]
+size = Vector3(60, 2, 60)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_50cra"]
+custom_solver_bias = 0.082
+margin = 0.767
+
+[sub_resource type="SphereMesh" id="SphereMesh_yh5la"]
+
+[node name="GameController" type="Node" unique_id=1594112105]
+script = SubResource("GDScript_yh5la")
+
+[node name="Water" type="StaticBody3D" parent="." unique_id=103940232]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Water" unique_id=530563644]
+shape = SubResource("BoxShape3D_7dm0k")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Water" unique_id=607654415]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.467, -1, -2.3)
+mesh = SubResource("BoxMesh_ig7tw")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=884297610]
+transform = Transform3D(-0.9827454, 0.18496338, -3.1614906e-08, -0.08164795, -0.43381092, 0.897297, 0.16596699, 0.88181436, 0.44142753, 0.086811066, 22.837555, 0.51080704)
+shadow_enabled = true
+
+[node name="Boat" type="StaticBody3D" parent="." unique_id=2056278930]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.012309313, 0.13216114, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Boat" unique_id=1548525348]
+shape = SubResource("SphereShape3D_50cra")
+debug_color = Color(0.7031515, 0.34619164, 0.8767679, 0.41960785)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Boat" unique_id=1851578284]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014858246, -0.011775255, -0.000787735)
+mesh = SubResource("SphereMesh_yh5la")
+
+[node name="Player" parent="." unique_id=1252855654 instance=ExtResource("1_yh5la")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1662749, 0.82852817, -0.42492962)
