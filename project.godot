@@ -14,6 +14,10 @@ config/name="Fishing In The Styx"
 run/main_scene="uid://dxbexjt3oxc5l"
 config/features=PackedStringArray("4.6", "Forward Plus")
 
+[autoload]
+
+SceneManager="*uid://c7ojahkftdwfs"
+
 [filesystem]
 
 import/blender/enabled=false
