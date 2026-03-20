@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://03rrsj20k2i0"]
 
 [ext_resource type="PackedScene" uid="uid://cpv61c50e5wq7" path="res://Main/player.tscn" id="1_83ahj"]
-[ext_resource type="Script" uid="uid://co4y2a0j5qfvl" path="res://Main/scenes/System/main.gd" id="1_rj3ll"]
+[ext_resource type="Script" uid="uid://b7fo7lbs3po41" path="res://Main/scenes/System/camera.gd" id="2_2t3l8"]
 
 [sub_resource type="GDScript" id="GDScript_yh5la"]
+
+[sub_resource type="GDScript" id="GDScript_rj3ll"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7dm0k"]
 size = Vector3(60, 2, 60)
@@ -21,14 +23,17 @@ margin = 0.767
 script = SubResource("GDScript_yh5la")
 
 [node name="Main" type="Node3D" parent="." unique_id=1850773205]
-script = ExtResource("1_rj3ll")
-
-[node name="Camera" type="Camera3D" parent="Main" unique_id=449373977]
-transform = Transform3D(1, 0, 0, 0, 0.8041786, 0.59438777, 0, -0.59438777, 0.8041786, -0.01872313, 3.7856667, 3.1749144)
-fov = 137.81248
+script = SubResource("GDScript_rj3ll")
 
 [node name="Player" parent="Main" unique_id=1252855654 instance=ExtResource("1_83ahj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.166, 0.829, 0)
+
+[node name="Camera" type="Camera3D" parent="Main/Player" unique_id=449373977 node_paths=PackedStringArray("follow_target", "look_target")]
+transform = Transform3D(-0.92227644, -0.34043038, 0.18306682, -0.1277011, 0.7153791, 0.68696815, -0.3648269, 0.6101966, -0.7032505, 3.3012922, 7.4940076, -3.190462)
+fov = 59.863483
+script = ExtResource("2_2t3l8")
+follow_target = NodePath("..")
+look_target = NodePath("..")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Main/Player" unique_id=91074259]
 
