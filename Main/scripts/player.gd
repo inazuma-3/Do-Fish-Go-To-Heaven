@@ -4,6 +4,8 @@ extends CharacterBody3D
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 
+
+
 func _input(event):
 	var boob = preload("res://Main/scenes/System/Player/bobber.tscn").instantiate()
 	if event is InputEventMouseButton:
