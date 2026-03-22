@@ -4,3 +4,7 @@
 - Created Village scene for a 2d overlay
 - Added Camera and WASD movements
 - zumas a little bitch
+
+###
+3/20 by Soren
+- fixed bug for player moving with thrown bobber
