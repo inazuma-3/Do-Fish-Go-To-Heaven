@@ -12,7 +12,9 @@
 script = ExtResource("1_lagl6")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Bobber" unique_id=467035547]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
 shape = SubResource("SphereShape3D_j72t3")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Bobber" unique_id=778822174]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
 mesh = SubResource("SphereMesh_lagl6")

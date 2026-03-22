@@ -1,4 +1,7 @@
-extends CharacterBody3D
+class_name player extends CharacterBody3D
+
+# @onready var LookDirection: look_direction = %look_direction
+# @onready var BobberInteraction: bobber_interaction = %bobber_interaction
 
 var bobber: RigidBody3D
 const SPEED = 5.0
@@ -11,6 +14,7 @@ func _input(event):
 	if event is InputEventMouseButton:
 		print("Mouse Click/Unclick at: ", event.position)
 		get_tree().root.add_child(bobber_scene)
+		
 		# set ball's position to farther than the play's position
 		bobber_scene.global_position = global_position
 		
@@ -18,6 +22,7 @@ func _input(event):
 		bobber_scene.get_node("Bobber").add_collision_exception_with(self)
 
 func _physics_process(delta: float) -> void:
+	
 	# gravity
 	if not is_on_floor():
 		velocity += get_gravity() * delta
